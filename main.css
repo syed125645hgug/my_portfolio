@@ -1,0 +1,456 @@
+/* ==================== Responsive Hamburger Menu ========================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001;
+}
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+}
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1e1e1e;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    transform: translateY(-150%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-buttons {
+    display: none;
+  }
+}
+/* Optional: Animate hamburger icon to X when open */
+.hamburger.open div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open div:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ===================== Responsive Home Section ===================== */
+@media (max-width: 1024px) {
+  .home {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 5%;
+  }
+
+  .home-content {
+    max-width: 90%;
+    margin-top: 4rem;
+  }
+
+  .home-content h1 {
+    font-size: 42px;
+  }
+
+  .home-content h2 {
+    font-size: 26px;
+  }
+
+  .home-content p {
+    font-size: 16px;
+  }
+
+  .social-icons {
+    margin: 2rem 0;
+    justify-content: center;
+  }
+
+  .home-image {
+    margin-top: 2rem;
+  }
+
+  .home-image img {
+    width: 250px;
+    height: 250px;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-content h1 {
+    font-size: 36px;
+  }
+
+  .home-content h2 {
+    font-size: 22px;
+  }
+
+  .home-content p {
+    font-size: 15px;
+  }
+
+  .home-image img {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 50px 4%;
+  }
+
+  .home-content h1 {
+    font-size: 28px;
+  }
+
+  .home-content h2 {
+    font-size: 20px;
+  }
+
+  .home-content p {
+    font-size: 14px;
+  }
+
+  .social-icons a {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .home-image img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* ===================== Responsive Side Icon Navbar Section ===================== */
+
+@media (max-width: 768px) {
+  .side-icon-navbar {
+    right: 10px;
+    gap: 12px;
+  }
+  .side-nav-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+  }
+}
+@media (max-width: 480px) {
+  .side-icon-navbar {
+    right: 5px;
+    gap: 10px;
+    padding: 8px;
+  }
+  .side-nav-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+/* ===================== Responsive About Section ===================== */
+
+@media (max-width: 1024px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 5%;
+  }
+  .about-image {
+    margin-bottom: 30px;
+  }
+  .border-rotate {
+    width: 350px;
+    height: 350px;
+  }
+  .about-image img {
+    width: 320px;
+  }
+  .about-content {
+    max-width: 80%;
+  }
+}
+/* For Mobile Devices */
+@media (max-width: 768px) {
+  .about-content h2 {
+    font-size: 30px;
+  }
+  .about-content p {
+    font-size: 16px;
+  }
+  .about-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn {
+    width: 100%;
+  }
+}
+
+/* ===================== Responsive Education Section ===================== */
+
+@media (max-width: 1024px) {
+  .education {
+    padding: 60px 5%;
+  }
+  .edu-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  .edu-card {
+    padding: 25px;
+  }
+  .edu-card h3 {
+    font-size: 20px;
+  }
+  .edu-card p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .education {
+    padding: 50px 5%;
+  }
+  .edu-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .edu-card {
+    padding: 20px;
+  }
+  .edu-card h3 {
+    font-size: 18px;
+  }
+  .edu-card p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .education {
+    padding: 40px 5%;
+  }
+  .edu-container {
+    grid-template-columns: 1fr;
+  }
+  .edu-card {
+    padding: 18px;
+  }
+  .edu-card h3 {
+    font-size: 16px;
+  }
+  .edu-card p {
+    font-size: 12px;
+  }
+}
+
+/* ===================== Responsive Experience & Skills Section ===================== */
+
+@media (max-width: 768px) {
+  .timeline {
+    padding: 30px 0;
+  }
+
+  .timeline-item {
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tools h3 {
+    font-size: 1.5rem;
+  }
+
+  .tools {
+    padding: 1.5rem 1rem;
+  }
+
+  .tools .progress-bar {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .tools h3 {
+    font-size: 1.3rem;
+  }
+
+  .tools .progress-bar {
+    height: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .frontend-skills,
+  .backend-skills {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .experience-skills {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 5%;
+  }
+  .experience,
+  .skills {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+  .timeline {
+    padding-left: 0;
+    border-left: none;
+  }
+  .dot {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .content {
+    text-align: center;
+  }
+}
+
+/* ===================== Responsive Achievements Section ===================== */
+
+@media (max-width: 768px) {
+  .achievements-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    padding: 40px 5%;
+  }
+  .achievement-card {
+    padding: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .achievements-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .achievement-card {
+    padding: 15px;
+  }
+  .achievement-card .icon {
+    font-size: 35px;
+    padding: 15px;
+  }
+  .achievement-card h3 {
+    font-size: 20px;
+  }
+  .achievement-card p {
+    font-size: 14px;
+  }
+}
+
+/* ===================== Responsive Services Section ===================== */
+
+@media (max-width: 1024px) {
+  .services {
+    padding: 60px 5%;
+  }
+  .services-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .service-card {
+    padding: 25px;
+  }
+  .service-card h3 {
+    font-size: 22px;
+  }
+  .service-card p {
+    font-size: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .services {
+    padding: 50px 5%;
+  }
+  .services-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .service-card {
+    padding: 20px;
+  }
+  .service-card h3 {
+    font-size: 20px;
+  }
+  .service-card p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .services {
+    padding: 40px 5%;
+  }
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+  .service-card {
+    padding: 18px;
+  }
+  .service-card h3 {
+    font-size: 18px;
+  }
+  .service-card p {
+    font-size: 13px;
+  }
+}
+
+/* ===================== Responsive Contact Section ===================== */
+
+@media (max-width: 1024px) {
+  .contact-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .contact-form,
+  .contact-info {
+    max-width: 100%;
+  }
+  .contact-info {
+    text-align: center;
+  }
+  .info-item {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-content {
+    flex-direction: column;
+  }
+  .footer-links,
+  .footer-social {
+    margin-top: 20px;
+  }
+}
